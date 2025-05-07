@@ -127,7 +127,7 @@ export async function updateInvoice(
 	revalidatePath("/dashboard/invoices");
 	redirect("/dashboard/invoices");
 }
-export async function deleteInvoice(id: string) {
+export async function deleteInvoice(id: string, _formData: FormData) {
 	try {
 		await sql`DELETE FROM invoices WHERE id = ${id}`;
 	} catch (error) {
